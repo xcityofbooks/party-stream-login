@@ -1,0 +1,125 @@
+.section-container {
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--main-background-color);
+  background-image: linear-gradient(
+      to left,
+      rgba(39, 42, 55, 0),
+      rgba(39, 42, 55, 1),
+      rgba(39, 42, 55, 1)
+    ),
+    url("../Images/login-background.jpg");
+  background-size: auto;
+  background-repeat: no-repeat, no-repeat;
+  background-position: right;
+  font-family: "Roboto";
+}
+
+.section-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #272a37;
+  opacity: 0.5;
+  z-index: 1;
+}
+
+.inputs-container {
+  width: 50%;
+  height: 100vh;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+  margin-left: 10rem;
+}
+
+.text-container h3 {
+  color: var(--secondary-font-color);
+  font-size: 1rem;
+}
+
+.text-container h1 {
+  color: var(--main-font-color);
+  font-size: 3rem;
+}
+
+.inputs {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+}
+
+.inputs input {
+  background-color: var(--secondary-background-color);
+  color: var(--main-font-color);
+  border: none;
+  width: 20rem;
+  margin: 0.3rem;
+  padding: 1rem;
+  border-radius: 1rem;
+}
+
+.inputs label {
+  position: relative;
+  right: 52%;
+  pointer-events: none;
+  color: var(--secondary-font-color);
+  font-size: 1.2rem;
+}
+
+.inputs input:focus {
+  outline: 1px solid var(--blue-color);
+}
+
+.inputs input:focus ~ label,
+.inputs input:valid ~ label {
+  transition: all 0.3s;
+  bottom: 1rem;
+  color: var(--blue-color);
+  font-size: 0.7rem;
+}
+
+.login-btn {
+  background-color: var(--secondary-color);
+  border: none;
+  border-radius: 1rem;
+  width: 22rem;
+  margin: 0.3rem;
+  color: var(--main-font-color);
+  font-weight: bold;
+  height: 2.5rem;
+  font-size: 1rem;
+  margin-top: 3rem;
+  cursor: pointer;
+}
+
+.login-btn:focus {
+  background-color: var(--secondary-font-color);
+  color: var(--main-font-color);
+}
+
+.main-title {
+  color: var(--secondary-font-color) !important;
+  font-size: 1.2rem !important;
+}
+
+.subtitle {
+  color: var(--main-font-color);
+}
+
+@media screen and (max-width: 576px) {
+  .inputs label {
+    right: -20px;
+    bottom: 40px;
+  }
+
+  .inputs input:focus ~ label,
+  .inputs input:valid ~ label {
+    top: -50px;
+  }
+}
